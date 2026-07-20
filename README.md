@@ -1,5 +1,7 @@
 
-📊 Retail Revelations: Procurement KPI Analysis Dataset
+# 📊 Supplier KPI Analysis & Performance Dashboard
+
+## 📝 Description du Projet
 
  L'objectif est d'explorer, nettoyer et analyser le jeu de données afin d'en extraire des insights stratégiques sur les achats.
 
@@ -20,7 +22,7 @@ SUPPLIER_KPI_ANALYSIS/
 ├── nettoyage.ipynb           # Notebook Jupyter interactif pour le nettoyage et analyse
 └── README.md                 # Documentation du projet
 ```
-⚙️ Pipeline de Nettoyage (nettoyage.py)
+## ⚙️ Pipeline de Nettoyage (`nettoyage.py`)
 
 Le script de nettoyage réalise les opérations suivantes :
 
@@ -39,7 +41,7 @@ Le script de nettoyage réalise les opérations suivantes :
 4.Filtrage et Export : Suppression des doublons et des lignes aberrantes (Lead time négatif), puis exportation vers data/Dataset_clean.csv
 
 
-📈 Indicateurs & Analyses Clés (analyse.py)
+## 📈 Indicateurs & Analyses Clés (`analyse.py`)
 Le projet analyse plusieurs axes critiques :
 
 Dépenses Totales (Total_Spend) : Classement des fournisseurs par volume d'achat global (pour les commandes livrées).
@@ -48,7 +50,7 @@ Qualité (Defect_Rate) : Suivi du taux de défaut moyen par fournisseur pour ide
 
 Efficacité Opérationnelle (Lead_time & Compliance) : Évaluation du délai moyen de livraison, de sa stabilité (écart-type std) et du taux de conformité des commandes.
 
-🚀 Guide d'Utilisation
+## 🚀 Guide d'Utilisation
 
 1.Cloner le dépôt ou ouvrir le dossier du projet dans votre environnement de travail (ex: VS Code).
 
@@ -59,3 +61,7 @@ Lancer le nettoyage des données :
 
 4.Lancer l'analyse et les visualisations :
 Ouvrez analyse.ipynb ou exécutez vos scripts de visualisation (matplotlib / seaborn) pour afficher les graphiques de performance.
+
+## 🛠️ Prérequis Techniques
+* Python 3.12+
+* Bibliothèques requises : `pandas`, `matplotlib`, `seaborn`
