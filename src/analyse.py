@@ -21,7 +21,7 @@ Spend_supplier = df_deliverd.groupby('Supplier')['Total_Spend'].sum().sort_value
 print(Spend_supplier)
 for i,(nom,val),in enumerate(Spend_supplier.items(),1):
     pourcentage = (val/df['Total_Spend'].sum())*100
-    print(f" Numéro {i} | fournisseur : {nom:<15} | montant d'achat : {val:.2f} | pourcentage :{pourcentage:2f}%")
+    print(f" Numéro {i} | fournisseur : {nom:<15} | montant d'achat : {val:.2f} | pourcentage :{pourcentage:.2f}%")
 
 #-----Supplier Performance---------
 Defect_Rate_Supplier = df.groupby('Supplier')['Defect_Rate'].mean().sort_values(ascending=False)
@@ -29,20 +29,6 @@ print(Defect_Rate_Supplier)
 for i,(nom,taux) in enumerate(Defect_Rate_Supplier.items(),1):
     print(f"Numéro {i}  | nom de fournisseur : {nom:<15} | taux de defectueux:{taux:.2f}%")
 
-#-----Lead_Time_Performance---------
-print(df['Lead_time'])
-temps_livraison_moyenne = round(df_deliverd['Lead_time'].mean(),2)
-print(temps_livraison_moyenne)
-Lead_Time_Performa = df_deliverd.groupby('Supplier')['Lead_time'].mean().sort_values(ascending=False)
-print(Lead_Time_Performa )
-for i,(nom,jours) in enumerate(Lead_Time_Performa.items()):
-    if jours > temps_livraison_moyenne:
-        print(f" Temps de livraison en moyenne de {nom} est supérieur que la moyenne :{temps_livraison_moyenne} jours")
-
-supplier_summary = df_deliverd.groupby('Supplier').agg(
-    {'Total_Spend': 'sum','Defect_Rate':'mean','Lead_time':'mean','Savings_per_Order': 'sum'}
-    ).sort_values(by='Savings_per_Order',ascending=False)
-print(supplier_summary)
 
 #-----Lead_Time_Performance---------
 temps_livraison_moyenne = round(df_deliverd['Lead_time'].mean(),2)
@@ -61,3 +47,4 @@ supplier_summary = df_deliverd.groupby('Supplier').agg({
     'Lead_time': 'mean',
     'Savings_per_Order': 'sum'
 }).sort_values(by='Savings_per_Order', ascending=False)
+print(supplier_summary)

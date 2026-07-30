@@ -22,7 +22,6 @@ df['Delivery_Date'] = pd.to_datetime(df['Delivery_Date'],format = 'mixed', error
 df['Defective_Units'] = df['Defective_Units'].fillna(0)
 df['Expected_Spend'] = df['Quantity']*df['Unit_Price']
 df['Total_Spend'] = df['Quantity'] * df['Negotiated_Price']
-df['Expected_Spend'] = df['Quantity'] * df['Unit_Price']
 df['Savings_per_Order'] = df['Expected_Spend'] - df['Total_Spend']
 df['Defect_Rate'] = (df['Defective_Units'] / df['Quantity']) * 100
 
