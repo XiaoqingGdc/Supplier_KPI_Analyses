@@ -24,7 +24,7 @@ df['Expected_Spend'] = df['Quantity']*df['Unit_Price']
 df['Total_Spend'] = df['Quantity'] * df['Negotiated_Price']
 df['Savings_per_Order'] = df['Expected_Spend'] - df['Total_Spend']
 df['Defect_Rate'] = (df['Defective_Units'] / df['Quantity']) * 100
-
+df['Compliance_Flag'] = (df['Compliance'] == 'Yes').astype(int)
 df['Lead_time'] = (df['Delivery_Date']-df['Order_Date']).dt.days
 
 df = df.drop_duplicates()
